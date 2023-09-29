@@ -174,6 +174,9 @@ require('lazy').setup({
   -- Copilot
   'github/copilot.vim',
 
+  -- Undotree
+  'mbbill/undotree',
+
   -- ===============
   -- End of packages
   -- ===============

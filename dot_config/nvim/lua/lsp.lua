@@ -76,11 +76,36 @@ function M.setup()
           }
         },
       }
-    }
+    },
+    eslint = {},
+    tsserver = {},
+    volar = {},
+    bashls = {},
+    emmet_ls = {},
   }
 
   mason_lspconfig.setup {
     ensure_installed = vim.tbl_keys(servers),
+    handlers = {
+      function(server_name)
+        lspconfig[server_name].setup {
+          capabilities = capabilities,
+          on_attach = on_attach,
+        }
+      end,
+      ['eslint'] = function()
+        lspconfig.eslint.setup({
+          on_attach = function(_, bufnr)
+            vim.api.nvim_create_autocmd('BufWritePre', {
+              buffer = bufnr,
+              command = 'EslintFixAll',
+            })
+            on_attach(_, bufnr)
+          end,
+          capabilities = capabilities,
+        })
+      end,
+    },
   }
 
   lspconfig.lua_ls.setup {
@@ -95,16 +120,6 @@ function M.setup()
         settings = servers[server_name],
         filetypes = (servers[server_name] or {}).filetypes,
       }
-    end,
-    ['eslint'] = function()
-      lspconfig.eslint.setup({
-        on_attach = function(_, bufnr)
-          vim.api.nvim_create_autocmd('BufWritePre', {
-            buffer = bufnr,
-            command = 'EslintFixAll',
-          })
-        end,
-      })
     end,
   }
 end
