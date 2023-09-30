@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Make sure that all changes are applied
+if [[ $(chezmoi status) ]]; then 
+	echo 'There are unapplied changes'
+	chezmoi status
+	exit 1
+fi
