@@ -156,3 +156,6 @@ alias fco='git checkout `git branch | fzf`'
 alias v='nvim'
 
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
+# Give me current time
+alias now='date +%T'
