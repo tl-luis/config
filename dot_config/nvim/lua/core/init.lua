@@ -16,6 +16,7 @@ vim.o.relativenumber = true
 
 -- Netrw display, see :help netrw
 vim.g.netrw_bufsettings = 'noma nomod nonu nobl nowrap ro rnu'
+vim.g.netrw_banner = false
 
 -- Undos
 vim.cmd('set undofile')

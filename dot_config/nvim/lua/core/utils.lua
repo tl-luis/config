@@ -17,6 +17,10 @@ function M.nmap(lhs, rhs, opts)
   vim.keymap.set('n', lhs, rhs, opts)
 end
 
+function M.vmap(lhs, rhs, opts)
+  vim.keymap.set('v', lhs, rhs, opts)
+end
+
 function M.imap(lhs, rhs, opts)
   vim.api.nvim_set_keymap('i', lhs, rhs, opts)
 end
