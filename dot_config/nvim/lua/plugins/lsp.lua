@@ -87,6 +87,38 @@ local function setup()
         settings = servers[server_name],
       })
     end,
+    ['eslint'] = function()
+      lspconfig['eslint'].setup({
+        capabilities = capabilities,
+        on_attach = function(client, bufnr)
+          vim.api.nvim_create_autocmd('BufWritePre', {
+            buffer = bufnr,
+            command = 'EslintFixAll',
+          })
+          on_attach(client, bufnr)
+        end,
+        settings = {
+          format = { enable = true },
+          lint = { enable = true },
+        },
+      })
+    end,
+  })
+
+  -- Global mappings.
+  -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+  vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+  vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+  vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+  vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
+  -- Need to get rid of this mason nonsense
+  lspconfig.ruff_lsp.setup({
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+      client.server_capabilities.hoverProvider = false
+      on_attach(client, bufnr)
+    end,
   })
 end
 

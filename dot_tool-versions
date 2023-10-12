@@ -1,2 +1,4 @@
 direnv 2.32.3
 nodejs 20.7.0
+golang 1.21.1
+python 3.12.0

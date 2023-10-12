@@ -24,3 +24,15 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup('plugins')
 
 -- ====
+
+require('statusline')
+
+-- Colorschemes
+-- ============
+
+-- Available colorschemes
+-- nightfox (and other foxes, e.g. carbonfox)
+-- selenized
+vim.cmd [[ colorscheme kanagawa ]]
+vim.cmd [[ highlight Normal guibg=none ]]
+vim.cmd [[ highlight NonText guibg=none ]]

@@ -2,15 +2,16 @@
 
 local utils = require('core/utils')
 local nmap = utils.nmap
+local vmap = utils.vmap
 local common_opts = { noremap = true, silent = true }
 
 
 -- NetRW
 -- =====
 
-nmap('<leader>e', ':Explore<CR>', common_opts)
-nmap('<leader>-', ':Vexplore<CR>', common_opts)
-nmap('<leader>_', ':Sexplore<CR>', common_opts)
+-- nmap('<leader>e', ':Explore<CR>', common_opts)
+-- nmap('<leader>-', ':Vexplore<CR>', common_opts)
+-- nmap('<leader>_', ':Sexplore<CR>', common_opts)
 
 
 -- Buffers
@@ -56,3 +57,10 @@ nmap('<CR>', ':nohl<CR>', common_opts)
 
 -- Note the lack of a <CR>, this should be used as a shorthand
 nmap('<leader>?', ':h ', common_opts)
+
+-- Clipboard
+-- =========
+
+-- Copy to clipboard
+nmap('<leader>y', '"+y', common_opts)
+vmap('<leader>y', '"+y', common_opts)
