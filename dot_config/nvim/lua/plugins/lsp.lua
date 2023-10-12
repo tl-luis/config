@@ -103,6 +103,15 @@ local function setup()
         },
       })
     end,
+    ['ruff_lsp'] = function()
+      lspconfig.ruff_lsp.setup({
+        capabilities = capabilities,
+        on_attach = function(client, bufnr)
+          client.server_capabilities.hoverProvider = false
+          on_attach(client, bufnr)
+        end,
+      })
+    end,
   })
 
   -- Global mappings.
@@ -111,15 +120,6 @@ local function setup()
   vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
   vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
-
-  -- Need to get rid of this mason nonsense
-  lspconfig.ruff_lsp.setup({
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-      client.server_capabilities.hoverProvider = false
-      on_attach(client, bufnr)
-    end,
-  })
 end
 
 return {
