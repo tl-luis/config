@@ -134,12 +134,6 @@ source "$HOME/.config/zsh/aliases"
 
 export GPG_TTY=$(tty)
 
-# OPS config
-export OPS_DIR="$HOME/.ops"
-export PATH="$HOME/.ops/bin:$PATH"
-source "$HOME/.ops/scripts/bash_completion.sh"
-autoload bashcompinit
-
 # Docker stuff
 removecontainers() {
     docker stop $(docker ps -aq)
@@ -199,13 +193,13 @@ alias zc='zellij -l compact'
 alias zr='zellij run'
 
 # Show virtual env
-show_virtual_env() {
-  if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
-    echo "($(basename $VIRTUAL_ENV))"
-  fi
-}
-export -f show_virtual_env
-PS1='$(show_virtual_env)'$PS1
+# show_virtual_env() {
+#   if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
+#     echo "($(basename $VIRTUAL_ENV))"
+#   fi
+# }
+# export -f show_virtual_env
+# PS1='$(show_virtual_env)'$PS1
 
 # Secrets
 export OPENAI_API_KEY={{ dashlaneNote "openai" }}
@@ -244,6 +238,10 @@ dotEnv() {
 }
 alias .e='dotEnv'
 alias .ee='dotEnv .env'
+
+# AWS
+alias sso='aws sso login'
+alias ecr='aws ecr get-login-password | docker login -u AWS --password-stdin "https://$(aws sts get-caller-identity --query Account --output text).dkr.ecr.eu-west-1.amazonaws.com"'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
