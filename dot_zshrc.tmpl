@@ -170,12 +170,13 @@ if [ -f '/Users/luisdiaz/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/
 
 # Fuzzy searches and stuff
 export FZF_DEFAULT_COMMAND="fd --type f -u -E .git -E .venv -E '*.pyc' -E __pycache__ -E .mypy_cache -E node_modules -E .ruff_cache"
+alias ff='fzf --preview "bat --color=always --style=header,grid,numbers --line-range :500 {}" --bind=ctrl-v:toggle-preview,ctrl-u:half-page-up,ctrl-d:half-page-down'
 alias fcd='cd `fd --type d -u -E .git -E .venv -E __pycache__ -E node_modules -E .mypy_cache | fzf`'
 alias fco='git checkout `git branch | fzf`'
 
 # Neovim
 alias v='nvim'
-alias fv='nvim `fzf`'
+alias fv='nvim `ff`'
 
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
@@ -220,6 +221,15 @@ export VI_MODE_CURSOR_NORMAL=2
 export VI_MODE_CURSOR_VISUAL=3
 export VI_MODE_CURSOR_INSERT=5
 export VI_MODE_CURSOR_OPPEND=0
+
+# EXA
+alias l='exa -l --icons --git -a'
+alias lt='exa --tree --level=2 --long --icons --git'
+
+cx() { cd "$@" && l; }
+
+# xh
+alias http='xh'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
