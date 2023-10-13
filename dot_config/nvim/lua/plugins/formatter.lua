@@ -13,6 +13,9 @@ local function setup()
       json = {
         require('formatter.filetypes.json').prettier,
       },
+      sh = {
+        require('formatter.filetypes.sh').shfmt,
+      },
     }
   })
 

@@ -9,6 +9,8 @@ local function setup()
   nmap('<leader>fh', builtin.help_tags, {})
   nmap('<leader>gf', builtin.git_files, {})
   nmap('<leader>gb', builtin.git_branches, {})
+  nmap('<leader>bf', builtin.current_buffer_fuzzy_find, {})
+  nmap('<leader>jl', builtin.jumplist, {})
 
   require('telescope').setup({
     -- defaults = vim.tbl_extend(

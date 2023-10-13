@@ -64,3 +64,7 @@ nmap('<leader>?', ':h ', common_opts)
 -- Copy to clipboard
 nmap('<leader>y', '"+y', common_opts)
 vmap('<leader>y', '"+y', common_opts)
+
+-- Remaps
+-- ======
+nmap('<leader>jc', ':cle<CR>', common_opts)  -- Clear jump list

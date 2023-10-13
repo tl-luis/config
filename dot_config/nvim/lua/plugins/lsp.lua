@@ -4,6 +4,15 @@
 -- Servers list
 -- ============
 local servers = {
+  emmet_ls = {},
+  volar = {},
+  tsserver = {},
+  eslint = {},
+  bashls = {},
+  dockerls = {},
+  jsonls = {},
+  taplo = {},
+  yamlls = {},
   lua_ls = {
     Lua = {
       runtime = {

@@ -41,6 +41,7 @@ local function setup()
     sources = {
       { name = 'nvim_lsp' },
       { name = 'luasnip' },
+      { name = 'neorg' },
     },
   }
 

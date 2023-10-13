@@ -1,0 +1,69 @@
+// Change the UI
+simplified_ui true
+pane_frames false
+theme "catppuccin-mocha"
+
+keybinds {
+    unbind "Ctrl g"
+    normal {
+        bind "Ctrl l" { SwitchToMode "locked"; }
+        bind "Ctrl x" { SwitchToMode "session"; }
+        unbind "Ctrl o"
+    }
+    session {
+        bind "Ctrl x" { SwitchToMode "normal"; }
+        unbind "Ctrl o"
+    }
+    locked {
+        bind "Ctrl l" { SwitchToMode "normal"; }
+    }
+    move {
+        bind "Ctrl m" { SwitchToMode "normal"; }
+    }
+    pane {
+        bind "z" { ToggleFocusFullscreen; }
+        bind "h" { MoveFocus "Left"; SwitchToMode "normal"; }
+        bind "j" { MoveFocus "Down"; SwitchToMode "normal"; }
+        bind "k" { MoveFocus "Up"; SwitchToMode "normal"; }
+        bind "l" { MoveFocus "Right"; SwitchToMode "normal"; }
+    }
+    tab {
+        bind "h" { GoToPreviousTab; SwitchToMode "normal"; }
+        bind "l" { GoToNextTab; SwitchToMode "normal"; }
+    }
+}
+plugins {
+    tab-bar { path "tab-bar"; }
+    status-bar { path "status-bar"; }
+    strider { path "strider"; }
+    compact-bar { path "compact-bar"; }
+}
+
+themes {
+  catppuccin-mocha {
+    bg "#585b70" // Surface2
+    fg "#cdd6f4"
+    red "#f38ba8"
+    green "#a6e3a1"
+    blue "#89b4fa"
+    yellow "#f9e2af"
+    magenta "#f5c2e7" // Pink
+    orange "#fab387" // Peach
+    cyan "#89dceb" // Sky
+    black "#181825" // Mantle
+    white "#cdd6f4"
+  }
+    kanagawa {
+        fg "#DCD7BA"
+        bg "#1F1F28"
+        red "#C34043"
+        green "#76946A"
+        yellow "#FF9E3B"
+        blue "#7E9CD8"
+        magenta "#957FB8"
+        orange "#FFA066"
+        cyan "#7FB4CA"
+        black "#16161D"
+        white "#DCD7BA"
+    }
+}

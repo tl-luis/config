@@ -1,3 +1,0 @@
-return {
-  'gsuuon/note.nvim',
-}
