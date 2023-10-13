@@ -13,6 +13,10 @@ local M = {}
 -- Keymapping
 -- ==========
 
+-- Set a keymap for normal mode.
+-- @param lhs string: The left hand side of the mapping.
+-- @param rhs string: The right hand side of the mapping.
+-- @param opts table: The options for the mapping.
 function M.nmap(lhs, rhs, opts)
   vim.keymap.set('n', lhs, rhs, opts)
 end
