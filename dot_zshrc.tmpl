@@ -193,13 +193,13 @@ alias zc='zellij -l compact'
 alias zr='zellij run'
 
 # Show virtual env
-# show_virtual_env() {
-#   if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
-#     echo "($(basename $VIRTUAL_ENV))"
-#   fi
-# }
-# export -f show_virtual_env
-# PS1='$(show_virtual_env)'$PS1
+show_virtual_env() {
+  if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
+    echo "($(basename $VIRTUAL_ENV))"
+  fi
+}
+export -f show_virtual_env
+PS1='$(show_virtual_env)'$PS1
 
 # Secrets
 export OPENAI_API_KEY={{ dashlaneNote "openai" }}
