@@ -25,7 +25,7 @@ require('lazy').setup('plugins')
 
 -- ====
 
-require('statusline')
+-- require('statusline')
 
 -- Colorschemes
 -- ============

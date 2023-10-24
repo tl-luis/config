@@ -249,6 +249,9 @@ importSSH() {
   dcli n TL_SSH_KEY > ~/.ssh/tl_luis
 }
 
+# Add cargo to path
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

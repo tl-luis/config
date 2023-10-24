@@ -26,6 +26,10 @@ nmap('<leader>v', '<C-w>v', common_opts)
 nmap('<leader>s', '<C-w>s', common_opts)
 -- Opening as tab
 nmap('<leader>T', '<C-w>T', common_opts)
+-- Traversing buffers
+nmap('bn', ':bnext<CR>', common_opts)
+nmap('bp', ':bprev<CR>', common_opts)
+nmap('bd', ':bd<CR>', common_opts)
 
 
 -- Sourcing
