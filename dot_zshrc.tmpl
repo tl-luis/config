@@ -202,8 +202,10 @@ alias zr='zellij run'
 # PS1='$(show_virtual_env)'$PS1
 
 # Secrets
-export OPENAI_API_KEY={{ dashlaneNote "openai" }}
-export SENTRY_API_KEY={{ dashlaneNote "sentry" }}
+{{/*
+export OPENAI_API_KEY=
+export SENTRY_API_KEY=
+*/}}
 
 # VI Mode
 export VI_MODE_SET_CURSOR=true
