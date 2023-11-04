@@ -2,6 +2,7 @@ local function setup()
   -- luasnip setup
   local luasnip = require('luasnip')
   local cmp = require('cmp')
+  require("luasnip.loaders.from_vscode").lazy_load()
 
   -- nvim-cmp setup
   local config = {
@@ -61,6 +62,5 @@ return {
     -- Adds a number of user-friendly snippets
     'rafamadriz/friendly-snippets',
   },
-  event = 'VeryLazy',
   config = setup
 }

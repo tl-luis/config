@@ -16,6 +16,9 @@ local function setup()
       sh = {
         require('formatter.filetypes.sh').shfmt,
       },
+      html = {
+        require('formatter.filetypes.html').prettier,
+      },
     }
   })
 

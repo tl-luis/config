@@ -33,7 +33,6 @@ local function setup()
           '-E', '__pycache__', '-E', 'node_modules/', '-E', '.venv/', '-E', '_build',
           '-E', 'deps', '-E', 'assets', '-E', '.elixir_ls', '-E', '.docs/', '-E',
           '.mypy_cache', '-E', '.pytest_cache', '-E', '.ruff_cache' },
-        search_dirs = { '~/.local/share/chezmoi', '.' },
       },
       git_files = {
         show_untracked = true,

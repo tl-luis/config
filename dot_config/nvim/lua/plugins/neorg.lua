@@ -3,6 +3,7 @@ local function setup()
 
   require('neorg').setup {
     load = {
+      ['core.ui'] = {},
       ['core.keybinds'] = {
         config = {
           neorg_leader = '<space>',
@@ -22,6 +23,11 @@ local function setup()
             notes = '~/notes',
           },
         },
+      },
+      ['core.presenter'] = {
+        config = {
+          zen_mode = 'zen-mode',
+        }
       },
     },
   }
